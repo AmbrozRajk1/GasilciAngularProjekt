@@ -1,0 +1,43 @@
+img {
+    width: 400px;
+    height: 350px;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+}
+
+.card {
+    margin: 30px;
+}
+
+p {
+    text-align: left;
+}
+
+.deleteButton {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+mat-card-header {
+    text-align: left;
+}
+
+td:nth-child(even) {
+    text-align: left;
+}
+
+td:nth-child(odd) {
+    text-align: left;
+}

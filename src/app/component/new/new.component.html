@@ -1,0 +1,91 @@
+<h1>Add new firefighter</h1><br>
+<table class="newTable">
+    <tr>
+        <td>
+            <mat-form-field [style.width.px]=400>
+                <mat-label>First name</mat-label>
+                <input matInput [(ngModel)]="FirstName">
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field [style.width.px]=400>
+                <mat-label>Last name</mat-label>
+                <input matInput [(ngModel)]="LastName">
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field [style.width.px]=400>
+                <mat-label>Gender</mat-label>
+                <mat-select disableRipple [(ngModel)]="Gender">
+                    <mat-option value="Male">Male</mat-option>
+                    <mat-option value="Female">Female</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field [style.width.px]=400>
+                <mat-label>Rank</mat-label>
+                <mat-select disableRipple [(ngModel)]="Rank">
+                    <mat-option value="Probationary Firefighter">Probationary Firefighter</mat-option>
+                    <mat-option value="Firefighter">Firefighter</mat-option>
+                    <mat-option value="Driver Engineer">Driver Engineer</mat-option>
+                    <mat-option value="Lieutenant">Lieutenant</mat-option>
+                    <mat-option value="Captain">Captain</mat-option>
+                    <mat-option value="Battalion Chief">Battalion Chief</mat-option>
+                    <mat-option value="Assistant Chief">Assistant Chief</mat-option>
+                    <mat-option value="Fire Chief">Fire Chief</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <mat-form-field [style.width.px]=400>
+            <mat-label>Date of birth</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="DateOfBirth">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field [style.width.px]=400>
+                <mat-label>Address</mat-label>
+                <input matInput [(ngModel)]="Address">
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field [style.width.px]=400>
+                <mat-label>Card number</mat-label>
+                <input matInput [(ngModel)]="CardNumber" (input)="onInput($event)">
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field [style.width.px]=400>
+                <mat-label>Valid to</mat-label>
+                <input matInput [matDatepicker]="picker" [(ngModel)]="ValidTo">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+            <input hidden (change)="onFileSelected()" #fileInput type="file" id="img_upload" name="img"
+                accept="image/*">
+        </td>
+    </tr>
+</table>
+<br>
+
+<button type="submit" mat-raised-button color="primary" (click)="NewUser()" class="button">ADD</button>

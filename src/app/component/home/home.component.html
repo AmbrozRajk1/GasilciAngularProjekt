@@ -1,0 +1,42 @@
+<h1>Firefighters dashboard</h1><br>
+<div class="main">
+    <div class="card" *ngFor="let Firefighter of Dashboard">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{Firefighter.FirstName}} {{Firefighter.LastName}}</mat-card-title>
+                <mat-card-subtitle>{{Firefighter.Rank}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [src]="Firefighter.ThumbnailURL">
+            <mat-card-content>
+                <table>
+                    <tr>
+                        <td>Gender:&nbsp;&nbsp;&nbsp;</td>
+                        <td>{{Firefighter.Gender}}</td>
+                    </tr>
+                    <tr>
+                        <td>Address:&nbsp;&nbsp;&nbsp;</td>
+                        <td>{{Firefighter.Address}}</td>
+                    </tr>
+                    <tr>
+                        <td>Card number:&nbsp;&nbsp;&nbsp;</td>
+                        <td>{{Firefighter.CardNumber}}</td>
+                    </tr>
+                    <tr>
+                        <td>Date of birth:&nbsp;&nbsp;&nbsp;</td>
+                        <td>{{Firefighter.DateOfBirth}}</td>
+                    </tr>
+                    <tr>
+                        <td>Card valid to:&nbsp;&nbsp;&nbsp;</td>
+                        <td>{{Firefighter.ValidTo}}</td>
+                    </tr>
+                </table>
+            </mat-card-content>
+            <mat-card-actions>
+                <div class="deleteButton">
+                    <button mat-raised-button color="warn" (click)="DeleteUser(Firefighter.ID, Firefighter.FirstName, Firefighter.LastName, Firefighter.ThumbnailURL)">DELETE</button>
+                </div>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
